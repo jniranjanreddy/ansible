@@ -1,0 +1,15 @@
+---
+  - name:  Identifying and modifying bond0
+    import_tasks: redhat.yml
+    when:  ansible_os_family ==  "RedHat"
+
+
+
+  - name:  Identifying and modifying bond0
+    import_tasks: ubuntu.yml
+    when:   ansible_distribution == "Ubuntu"
+  
+  
+  - name:  Identifying and modifying bond0
+    import_tasks: solaris.yml
+    when:  ansible_os_family ==  "Solaris"

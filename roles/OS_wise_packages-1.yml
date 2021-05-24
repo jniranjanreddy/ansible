@@ -1,0 +1,7 @@
+---
+- hosts: puppet-client-1
+  tasks: 
+    - include_role: 
+        name: OS_wise_packages-1
+      when: ansible_os_family == "RedHat"
+

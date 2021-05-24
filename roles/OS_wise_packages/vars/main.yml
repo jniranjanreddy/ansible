@@ -1,0 +1,4 @@
+---
+# vars file for roles.test
+user1: 
+  - user1

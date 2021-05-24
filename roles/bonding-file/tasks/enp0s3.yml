@@ -1,0 +1,5 @@
+- lineinfile:
+    path: '/etc/sysconfig/network-scripts/ifcfg-enp0s3'
+    regexp: '^LINKDELAY='
+    line: 'LINKDELAY=20'
+

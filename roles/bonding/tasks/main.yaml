@@ -1,0 +1,6 @@
+---
+  - name:  Identifying and modifying bond0
+    import_tasks: enp0s3.yml
+    when:  ansible_enp0s3.device == "enp0s3"
+    #- action: debug msg="ethernet = {{  ansible_enp0s3.device }}"
+    #- action: debug msg1="IPAddress = {{  ipv4.address }}"

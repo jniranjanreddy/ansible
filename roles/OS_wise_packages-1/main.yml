@@ -1,0 +1,22 @@
+---
+- hosts: all
+  tasks: 
+    - name: creating multiple users..
+      group: 
+        name: nirulabs
+        state: present    
+    
+    
+    - name: creating multiple users..
+      user: 
+        name: "{{ item }}"
+        state: present
+        groups: "nirulabs"
+      with_items: 
+        - user1
+        - user2
+        - user3
+        - user4
+        - user5
+
+    

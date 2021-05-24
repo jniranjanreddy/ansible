@@ -1,0 +1,4 @@
+---
+- hosts: puppet-client-1
+  roles:
+      - bonding-file

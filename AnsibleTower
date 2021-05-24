@@ -1,0 +1,37 @@
+Ansible Tower installation steps.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Configuring the Tower UI
+Ansibe Tower configuring
+>> whole intention is to create a template, for creating template we need credentails,hosts,groups,projects.
+
+Create a organization 
+
+Create a credentils
+- use a machine credentails
+ 
+- Create users, user needs to link to the organization created in step1
+
+
+Step2
+- Create a project and link to a git repo
+   - SCM typye - manual  path will be "/var/lib/awx..."
+
+
+step 3:-
+- Create a template 
+  - select the inventory, playbook,crendtails 
+  - option to provide permission to the user for the templates
+

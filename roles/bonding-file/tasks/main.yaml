@@ -1,0 +1,6 @@
+---
+- stat: path=/etc/sysconfig/network-scripts/ifcfg-enp0s3
+  register: niru
+    
+  import_tasks: enp0s3.yml
+  when: niru.stat.exists == True

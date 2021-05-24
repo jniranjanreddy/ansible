@@ -1,0 +1,12 @@
+---
+  vars_prompt:
+    - name: "version"
+      prompt: "you want to Enable or Disable"
+      tasks: 
+      
+      
+      
+      
+      
+      
+      when version == enable

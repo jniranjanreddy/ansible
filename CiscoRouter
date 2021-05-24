@@ -1,0 +1,31 @@
+Tasks for connecting cisco router with IOS commands
+
+Inventory file
+[cat1:vars]
+ansible_network_os=ios
+ansible_connection=network_cli
+
+[cat1]
+10.72.XXX.X
+
+
+tasksfile
+ cat cisco-ios.yml
+---
+- name: "Configure router"
+  hosts: cat1
+  user: XXXX
+  gather_facts: no
+
+  tasks:
+    - name: "show the version"
+      ios_command:
+        commands: show version
+      register: version
+
+    - debug:
+        msg: "{{ version.stdout }}"
+
+
+#Reference
+https://developer.cisco.com/docs/ios-xe/#!ansible-quick-start-guide/hosts-file
