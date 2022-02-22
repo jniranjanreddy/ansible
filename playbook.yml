@@ -4,4 +4,5 @@
   roles:
 #     - facts
 #     - OS_wise_packages
-      - bonding
+#      - bonding
+    - aws-ec2 

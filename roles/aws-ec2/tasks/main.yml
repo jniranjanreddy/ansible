@@ -1,0 +1,15 @@
+---
+- ec2:
+    key_name: seneca
+    # group: webserver
+    instance_type: t2.micro
+    image: ami-0a23ccb2cdd9286bb
+    wait: yes
+    wait_timeout: 500
+    count: 1
+    region: ap-south-1
+    vpc_subnet_id: subnet-0844bb8e870c3d511
+    volumes:
+    - device_name: /dev/sdb
+      # snapshot: snap-abcdef12
+      volume_size: 10
