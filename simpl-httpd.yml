@@ -1,0 +1,6 @@
+---
+- hosts: all
+  - name: installed
+    yum: 
+      name: httpd
+      state: present

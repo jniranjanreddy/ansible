@@ -1,0 +1,17 @@
+---
+  - name: comparision operators
+    hosts: localhost
+    gather_facts: False
+    vars: 
+      x: 6
+      y: 10
+    tasks: 
+      - debug: 
+          msg: 
+            - "The Value of x is: {{ x }} and The Value of y is: {{ y }}" 
+            - "x == y: {{ x == y }}"
+            - "x != y: {{ x != y }}"
+            - "x > y: {{ x > y }}"
+            - "x < y: {{ x < y }}"
+            - "x >= y: {{ x >= y }}"
+            - "x <= y: {{ x <= y }}"

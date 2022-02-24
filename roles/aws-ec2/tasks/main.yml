@@ -9,6 +9,8 @@
     count: 1
     region: ap-south-1
     vpc_subnet_id: subnet-0844bb8e870c3d511
+    instance_tags:
+        Name: jenkins
     volumes:
     - device_name: /dev/sdb
       # snapshot: snap-abcdef12
