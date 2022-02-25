@@ -1,6 +1,11 @@
 ---
 - hosts: all
-  - name: installed
+  tasks: 
+  - name: install
     yum: 
-      name: httpd
-      state: present
+     name: finger
+     state: present
+  - name: clone Repo
+    git: 
+      repo: https://github.com/Niranjan2211/JsonPath.git
+      dest: /tmp/JsonPath 
