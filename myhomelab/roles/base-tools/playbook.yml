@@ -1,0 +1,8 @@
+# ansile-roles
+---
+- hosts: all
+  roles:
+#     - facts
+#     - OS_wise_packages
+#      - bonding
+    - aws-ec2 
