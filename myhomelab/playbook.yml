@@ -2,5 +2,5 @@
 ---
 - hosts: all
   roles:
-    - base-tools
+    - roles/ansible-role-awscli2
  
