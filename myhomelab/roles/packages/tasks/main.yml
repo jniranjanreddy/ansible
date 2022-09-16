@@ -1,11 +1,8 @@
 ---
-- name: Install a list of packages (suitable replacement for 2.11 loop deprecation warning)
-  ansible.builtin.yum:
-    # name:
-    #   - finger
-    #   - wget
-    #   - telnet
-    #   - net-tools
-    #   - htop
-    # state: present
-    name: "{{ packages }}"
+  - name:  Install packages in Ubuntu/Debian.
+    import_tasks: ubuntu.yml
+    when: ansible_os_family == 'Debian' and ansible_distribution_major_version == '20'
+
+  - name:  Install packages in CentOS/RedHat.
+    import_tasks: centos.yml
+    when: ansible_os_family == 'RedHat' and ansible_distribution_major_version == '7'

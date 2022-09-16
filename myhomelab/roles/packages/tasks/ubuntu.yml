@@ -1,0 +1,11 @@
+- name: Install a list of packages in Ubuntu/Debian.
+  ansible.builtin.apt:
+    pkg:
+    - git
+    - net-tools
+    - wget
+    state: latest
+    update_cache: yes
+    force_apt_get: yes
+    cache_valid_time: 3600
+    state: latest
