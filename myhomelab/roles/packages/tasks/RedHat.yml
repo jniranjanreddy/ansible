@@ -1,0 +1,18 @@
+---
+- name: Install a list of packages (suitable replacement for 2.11 loop deprecation warning)
+  ansible.builtin.yum:
+    name: "{{ packages }}"
+    state: latest
+
+- name: copy file to /tmp
+  copy:
+    src: azure-cli.repo
+    dest: /etc/yum.repos.d/
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Install azure-cli
+  ansible.builtin.yum:
+    name: azure-cli
+    state: latest

@@ -5,8 +5,20 @@
     - net-tools
     - wget
     - zip
+    - curl
     #- openssh-server
     update_cache: yes
     force_apt_get: yes
     cache_valid_time: 3600
     state: latest
+
+- name: copy file to /tmp
+  copy:
+    src: InstallAzureCLIDeb
+    dest: /tmp/
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Install azure cli.
+  command: bash /tmp/InstallAzureCLIDeb

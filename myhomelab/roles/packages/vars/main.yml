@@ -4,3 +4,4 @@ packages:
   - telnet
   - net-tools
   - zip
+  - curl
