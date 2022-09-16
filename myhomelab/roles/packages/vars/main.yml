@@ -3,3 +3,4 @@ packages:
   - wget
   - telnet
   - net-tools
+  - zip
