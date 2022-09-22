@@ -4,3 +4,10 @@
     - name: Hello Message
       debug:
         msg: "Hello World!"
+
+    - name: Get the OS platform
+      command: cat /etc/redhat-release
+      register: redhatRelease
+
+    - name: Print the redhat-release
+      debug: msg={{ redhatRelease }}
