@@ -1,4 +1,4 @@
-Tasks for connecting cisco router with IOS commands
+Tasks for connecting cisco router with IOS commands.
 
 Inventory file
 [cat1:vars]
