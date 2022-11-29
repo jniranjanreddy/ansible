@@ -2,6 +2,6 @@
 ---
 - hosts: all
   roles:
-    # - roles/ansible-role-awscli2
-    - roles/packages
-    #- roles/azure-cli
+    - roles/ansible-role-awscli2
+    #- roles/packages
+    - roles/azure-cli
