@@ -1,5 +1,8 @@
 # Ansible
 ```
+Ansible-Tower API calls" https://docs.ansible.com/ansible-tower/latest/html/towerapi/api_ref.html
+```
+```
 How to  install Ansible-Tower
 yum -y update
 yum -y install epel-release
@@ -38,3 +41,12 @@ sudo ./setup.sh
 
 ```
 export ANSIBLE_HOST_KEY_CHECKING=False
+## Tower rest Calls
+```
+root@awxdev#  curl -qsku admin:password http://192.168.9.121:8080/api/v2/config/ | jq '{Tower: ."version", Ansible: ."ansible_version"}'
+{
+  "Tower": "17.1.0",
+  "Ansible": "2.9.18"
+}
+
+```
