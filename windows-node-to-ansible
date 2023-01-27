@@ -1,0 +1,27 @@
+## How to add windows node to Ansible
+https://www.techbeatly.com/configure-your-windows-host-to-manage-by-ansible/
+https://www.techbeatly.com/how-to-open-winrm-ports-in-the-windows-firewall/
+
+```
+PS C:\Users\Administrator> (Get-Host).Version
+
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+5      1      14393  693
+
+```
+##If PowerShell isn’t using TLSv1.2, configure it to use it by default by running:
+[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+
+
+
+
+```
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+PS C:\Users\Administrator> $url = "https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1"
+PS C:\Users\Administrator> $file = "$env:temp\ConfigureRemotingForAnsible.ps1"
+PS C:\Users\Administrator> (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
+PS C:\Users\Administrator> powershell.exe -ExecutionPolicy ByPass -File $file
+Self-signed SSL certificate generated; thumbprint: DD2BFCC45E7503BC9C05BA9174326B593614C733
+```
