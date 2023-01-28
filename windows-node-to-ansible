@@ -2,6 +2,16 @@
 https://www.techbeatly.com/configure-your-windows-host-to-manage-by-ansible/
 https://www.techbeatly.com/how-to-open-winrm-ports-in-the-windows-firewall/
 
+
+Executing winrm from ubuntu through pythn
+```
+>>> import winrm
+>>> session = winrm.Session('192.168.9.125', auth=('windevops','password'), transport='ntlm')
+>>> result = session.run_ps("hostname")
+>>> print(result.std_out)
+b'DESKTOP-BVQIU5U\r\n'
+
+```
 ```
 PS C:\Users\Administrator> (Get-Host).Version
 
