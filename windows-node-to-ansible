@@ -10,8 +10,13 @@ Executing winrm from ubuntu through pythn
 >>> result = session.run_ps("hostname")
 >>> print(result.std_out)
 b'DESKTOP-BVQIU5U\r\n'
-
 ```
+# verify winrm port from linux machine
+```
+root@awxdev:/etc/ansible/group_vars# nc -vz 192.168.9.125 5985
+Connection to 192.168.9.125 5985 port [tcp/*] succeeded!
+```
+
 ```
 PS C:\Users\Administrator> (Get-Host).Version
 
