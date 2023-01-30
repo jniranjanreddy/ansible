@@ -1,6 +1,6 @@
 ---
 - name: "Create New user on Windows Machine"
-  hosts: "{{ NODES }}"
+  hosts: "192.168.9.126"
   tasks:
     - name: "Check Windows machines access using win_ping"
       win_ping:
