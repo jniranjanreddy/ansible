@@ -1,6 +1,6 @@
 ---
 - name: "Create New user on Windows Machine"
-  hosts: "192.168.9.126"
+  hosts: "{{ NODES }}"
   tasks:
     - name: "Check Windows machines access using win_ping"
       win_ping:
@@ -8,9 +8,11 @@
 
     - name: Create a new User 
       win_user:
-        name: john
+        name: john1
         password: MyP4ssw0rd
         state: present
         groups:
           - Users
       when: ansible_os_family == 'Windows'
+
+# ansible-playbook userAdd.yml -e "NODES=192.168.9.126"
