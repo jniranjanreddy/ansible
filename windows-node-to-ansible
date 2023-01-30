@@ -55,7 +55,7 @@ PS C:\Users\Administrator> (New-Object -TypeName System.Net.WebClient).DownloadF
 PS C:\Users\Administrator> powershell.exe -ExecutionPolicy ByPass -File $file
 Self-signed SSL certificate generated; thumbprint: DD2BFCC45E7503BC9C05BA9174326B593614C733
 ```
-
+NOTE: For win2019 Execute the Command -  winrm set winrm/config/service '@{AllowUnencrypted="true"}'
 ```
  # Debugging winrm
  
