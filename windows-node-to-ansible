@@ -133,3 +133,5 @@ Listener
  ## Check Connectvity
  winrm identify -r:http://127.0.0.1:5985 -auth:basic -u:Devops -p:password -encoding:utf-8
 ```
+Set-ExecutionPolicy Unrestricted
+```
