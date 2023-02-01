@@ -6,13 +6,21 @@ https://www.techbeatly.com/how-to-open-winrm-ports-in-the-windows-firewall/
 
 ## Prerequisite
 ```
-1. .net
- 2. winrm
+ 1. Powershell
+ 2. .Net
+ 3. winrm
 ```
 ## How to check .net Version.
 ```
 Get-ChildItem 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP' -Recurse | Get-ItemProperty -Name version -EA 0 | Where { $_.PSChildName -Match '^(?!S)\p{L}'} | Select PSChildName, version
 
+```
+## How to check PowerShell version
+```
+$PSVERSIONTABLE
+```
+## How to check winrm
+```
 ```
 ## create vars file..
 ```
@@ -64,7 +72,12 @@ PS C:\Users\Administrator> $url = "https://raw.githubusercontent.com/ansible/ans
 PS C:\Users\Administrator> $file = "$env:temp\ConfigureRemotingForAnsible.ps1"
 PS C:\Users\Administrator> (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
 PS C:\Users\Administrator> powershell.exe -ExecutionPolicy ByPass -File $file
-Self-signed SSL certificate generated; thumbprint: DD2BFCC45E7503BC9C05BA9174326B593614C733
+
+$url = "https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1"
+$file = "$env:temp\ConfigureRemotingForAnsible.ps1"
+(New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
+powershell.exe -ExecutionPolicy ByPass -File $file
+
 ```
 NOTE: For win2019 Execute the Command -  winrm set winrm/config/service '@{AllowUnencrypted="true"}'
 ```
