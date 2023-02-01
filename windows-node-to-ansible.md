@@ -1,8 +1,19 @@
 ## How to add windows node to Ansible
+```
 https://www.techbeatly.com/configure-your-windows-host-to-manage-by-ansible/
 https://www.techbeatly.com/how-to-open-winrm-ports-in-the-windows-firewall/
+```
 
+## Prerequisite
+```
+1. .net
+ 2. winrm
+```
+## How to check .net Version.
+```
+Get-ChildItem 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP' -Recurse | Get-ItemProperty -Name version -EA 0 | Where { $_.PSChildName -Match '^(?!S)\p{L}'} | Select PSChildName, version
 
+```
 ## create vars file..
 ```
 mkdir /etc/ansible/group_vars
