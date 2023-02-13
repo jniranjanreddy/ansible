@@ -1,0 +1,16 @@
+---
+- name: win_chocolatey module demo
+  hosts: win
+  become: false
+  gather_facts: false
+  vars:
+    - packages:
+        - git
+        - notepadplusplus
+  tasks:
+    - name: install packages
+      win_chocolatey:
+        name: putty
+        #name: "{{ packages }}"
+        state: present
+

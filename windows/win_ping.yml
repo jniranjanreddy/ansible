@@ -1,0 +1,9 @@
+---
+- name: win_ping module demo
+  hosts: win
+  become: false
+  gather_facts: yes
+  tasks:
+    - name: "Check Windows machines access using win_ping"
+      win_ping:
+      when: ansible_os_family == 'Windows'

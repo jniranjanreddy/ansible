@@ -1,0 +1,15 @@
+---
+- name: Touch a file (creates if not present, updates modification time if present)
+  hosts: win
+  gather_facts: yes
+  tasks: 
+    - name: Create Directory
+      win_file:
+        path: C:\Temp
+        state: directory
+        
+    - name: Touch a file
+      win_file:
+        path: C:\Temp\file1
+        state: touch
+      when: ansible_os_family == 'Windows'

@@ -11,6 +11,7 @@
         name: john1
         password: MyP4ssw0rd
         state: present
+        #state: absent
         groups:
           - Users
       when: ansible_os_family == 'Windows'

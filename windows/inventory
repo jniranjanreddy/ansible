@@ -1,0 +1,27 @@
+[win]
+192.168.9.125
+#192.168.9.126
+
+[win:vars]
+ansible_connection=winrm
+ansible_user=ansible 
+ansible_password=ansible
+ansible_winrm_server_cert_validation=ignore
+#ansible_winrm_trasport=basic
+ansible_winrm_trasport=ntlm
+ansible_ssh_port=5985 #HTTP
+
+
+[win2019]
+192.168.9.124
+
+[win2019:vars]
+ansible_connection=winrm
+ansible_user=ansible 
+#ansible_password=Password@123
+ansible_winrm_server_cert_validation=ignore
+#ansible_winrm_trasport=basic
+ansible_winrm_trasport=ntlm
+ansible_ssh_port=5985 #HTTP
+ansible_winrm_scheme=http
+
