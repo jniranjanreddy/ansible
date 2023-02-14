@@ -1,6 +1,5 @@
 ---
 ## tasks file for ubuntu-patching
-<<<<<<< HEAD
 - name: Get packages that can be upgraded
   become: yes
   ansible.builtin.dnf:
@@ -66,7 +65,3 @@
   ansible.builtin.debug:
     msg: "Packages upgrade failed"
   when: reg_upgrade_ok is not defined
- 
-=======
-## SOurce: https://www.dbi-services.com/blog/automating-linux-patching-with-ansible/
->>>>>>> 2c39ccd922ed90eaaf38c99ca67699d0a8c704ce
