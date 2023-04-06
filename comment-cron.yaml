@@ -1,0 +1,11 @@
+- name: "cron"
+  hosts: localhost
+  tasks:
+    - cron:
+        name: "test"
+        job: "systemctl restart chronyd > /dev/null 2>&"
+        minute: "0"
+        hour: "*/2"
+        #state: present # This will add the cron Entry in crontab
+        #state: absent  # This will remove job entry in crontab
+        disabled: True  # This will comment the cron entry crontab
